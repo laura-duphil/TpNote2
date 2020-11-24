@@ -3,26 +3,33 @@ package deqo;
 import java.util.List;
 
 /**
- * Classe répresentant une question à choix multiple
+ * Classe répresentant une question à choix multiple.
  */
 public class QuestionAChoixMultiple implements QuestionAChoix {
-
+    /**
+     * Enoncé d'un exo
+     */
     private String enonce;
+
+    /**
+     * Liste des bonnes réponses
+     */
     private List<Integer> indicesBonnesReponses;
 
     /**
      * Une question à choix multiple est complètement caractérisé par son énoncé et la liste des indices qui forment
-     * la bonne réponse
+     * la bonne réponse.
      * @param enonce l'énoncé de la question
      * @param indicesBonnesReponses la liste des indices formant la bonne réponse.
      */
-    public QuestionAChoixMultiple(String enonce, List<Integer> indicesBonnesReponses) {
+    public QuestionAChoixMultiple(final String enonce,
+                                  List<Integer> indicesBonnesReponses) {
         this.enonce = enonce;
         this.indicesBonnesReponses = indicesBonnesReponses;
     }
 
     /**
-     * Récupère l'énoncé de la question
+     * Récupère l'énoncé de la question.
      * @return l'énoncé de la question
      */
     public String getEnonce() {
@@ -34,10 +41,10 @@ public class QuestionAChoixMultiple implements QuestionAChoix {
      * @param indiceChoix l'indice du choix
      * @return 100/n si indiceChoix appartient à la liste des indices formant la bonne réponse, 0 sinon
      */
-    public float getScoreForIndice(int indiceChoix) {
-
+    public float getScoreForIndice(final int indiceChoix) {
+        float centF = 100f;
         if (indicesBonnesReponses.contains(indiceChoix)) {
-            return 100f/((float)(indicesBonnesReponses.size()));
+            return centF / ((float)(indicesBonnesReponses.size()));
         }
         return 0;
     }
