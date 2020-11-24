@@ -41,7 +41,7 @@ public class QuestionAChoixMultiple implements QuestionAChoix {
      * @return 100/n si indiceChoix appartient à la liste des indices formant la bonne réponse, 0 sinon
      */
     public float getScoreForIndice(int indiceChoix) {
-
+        System.out.println(indicesBonnesReponses.size());
         if (indicesBonnesReponses.contains(indiceChoix)) {
             return 100f/((float)(indicesBonnesReponses.size()));
         }

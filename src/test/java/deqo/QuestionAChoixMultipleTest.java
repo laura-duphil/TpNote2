@@ -13,6 +13,7 @@ public class QuestionAChoixMultipleTest {
     List<Integer> listeBonnesRep = Arrays.asList(tabRep);
 
     QuestionAChoixMultiple q = new QuestionAChoixMultiple("L'énoncé de la question",listeBonnesRep);
+
     @Test
     public void getEnonceTest() {
 

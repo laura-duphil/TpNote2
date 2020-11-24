@@ -31,8 +31,14 @@ public class ScoreCalculateurTest {
     }
 
     @Test
-    public void calculeScoreTtOkTest() {
-        List<Integer> repEtudiant = new ArrayList<Integer>(Arrays.asList(2,3,5));
-        assertEquals("pb DsLe score", 100, ScoreCalculateur.calculeScore(repEtudiant,q),0.01);
+    public void calculeScoreTropTest() {
+        List<Integer> repEtudiant = new ArrayList<Integer>(Arrays.asList(1,4,2,3,5));
+        assertEquals("pb DsLe score", 0, ScoreCalculateur.calculeScore(repEtudiant,q),0.01);
+    }
+
+    @Test
+    public void calculeScoreBofTest() {
+        List<Integer> repEtudiant = new ArrayList<Integer>(Arrays.asList(1,2,3));
+        assertEquals("pb DsLe score", 16.66, ScoreCalculateur.calculeScore(repEtudiant,q),0.01);
     }
 }
